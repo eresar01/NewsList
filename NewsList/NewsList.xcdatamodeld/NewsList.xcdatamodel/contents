@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="GalleryCoreData" representedClassName="GalleryCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="contentUrl" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="thumbnailUrl" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="metaData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetaCoreData" inverseName="gallery" inverseEntity="MetaCoreData"/>
+    </entity>
+    <entity name="LookedCoreData" representedClassName="LookedCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isLooked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="MetaCoreData" representedClassName="MetaCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="body" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="coverPhotoUrl" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shareUrl" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="gallery" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GalleryCoreData" inverseName="metaData" inverseEntity="GalleryCoreData"/>
+        <relationship name="video" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VideoCoreData" inverseName="metaData" inverseEntity="VideoCoreData"/>
+    </entity>
+    <entity name="VideoCoreData" representedClassName="VideoCoreData" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="thumbnailUrl" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="youtubeId" optional="YES" attributeType="String"/>
+        <relationship name="metaData" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetaCoreData" inverseName="video" inverseEntity="MetaCoreData"/>
+    </entity>
+    <elements>
+        <element name="GalleryCoreData" positionX="140.028076171875" positionY="-11.51608276367185" width="128" height="118"/>
+        <element name="LookedCoreData" positionX="-34.058349609375" positionY="387.2867431640625" width="128" height="59"/>
+        <element name="MetaCoreData" positionX="-362.325927734375" positionY="16.86810302734378" width="102.0849609375" height="163"/>
+        <element name="VideoCoreData" positionX="148.653076171875" positionY="220.0785522460938" width="128" height="118"/>
+    </elements>
+</model>
